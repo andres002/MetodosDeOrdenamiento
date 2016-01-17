@@ -8,7 +8,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="464.0" prefWidth="358.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.65" fx:controller="ordenamientos.FXMLDocumentController">
+<AnchorPane id="AnchorPane" prefHeight="464.0" prefWidth="358.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ordenamientos.FXMLDocumentController">
    <children>
       <AnchorPane fx:id="AnchorLeer" prefHeight="464.0" prefWidth="358.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
@@ -19,8 +19,12 @@
       </AnchorPane>
       <AnchorPane fx:id="AnchorOrdenar" layoutX="10.0" layoutY="10.0" prefHeight="464.0" prefWidth="358.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <Button fx:id="btnOrdenar" layoutX="149.0" layoutY="77.0" mnemonicParsing="false" text="Ordenar" AnchorPane.topAnchor="77.0" />
-            <TextArea fx:id="txtArea" layoutX="73.0" layoutY="132.0" prefHeight="200.0" prefWidth="200.0" />
+            <AnchorPane layoutX="26.0" layoutY="51.0" prefHeight="117.0" prefWidth="200.0">
+               <children>
+                  <Button fx:id="btnOrdenarMerge" mnemonicParsing="false" onAction="#Merge" text="Ordenar con merge" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+                  <TextArea fx:id="txtMerge" prefHeight="94.0" prefWidth="200.0" />
+               </children>
+            </AnchorPane>
          </children>
       </AnchorPane>
       <AnchorPane layoutX="10.0" layoutY="10.0" prefHeight="464.0" prefWidth="358.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />

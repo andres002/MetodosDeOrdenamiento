@@ -5,6 +5,7 @@
  */
 package ordenamientos;
 
+import algoritmos.Merge;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -24,11 +25,11 @@ import javafx.scene.layout.AnchorPane;
 public class FXMLDocumentController implements Initializable {
     
     @FXML
-    private TextArea txtArea;
+    private TextArea txtMerge;
     @FXML
     private TextField txtNombre;
     @FXML
-    private Button btnLeer, btnOrdenar;
+    private Button btnLeer, btnOrdenarMerge;
     @FXML
     private AnchorPane AnchorLeer, AnchorOrdenar;
     
@@ -49,20 +50,37 @@ public class FXMLDocumentController implements Initializable {
         }else{
             
         }
-        setOrdenar();
+        setAnchorOrdenar();
+        txtMerge.setText("El número de iteracciones es: "+mergeBestCase(datos.length));
+        
     }
-    private void setLeer(){
+    @FXML
+    private void Merge(ActionEvent event){
+        Merge merge = new Merge();
+        merge.merge_sort(datosO);
+        txtMerge.setText(txtMerge.getText()+"\n"+merge.getComparaciones());
+    }
+   
+    private void setAnchorLeer(){
         AnchorLeer.setVisible(true);
         AnchorOrdenar.setVisible(false);
     }
-    private void setOrdenar(){
+    private void setAnchorOrdenar(){
         AnchorLeer.setVisible(false);
         AnchorOrdenar.setVisible(true);
     }
     
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        setLeer();
+        setAnchorLeer();
     }    
+    
+/* Comparaciones del merge según el caso*/
+    
+    public double mergeBestCase(int n){
+        return n * Math.log(n);
+    }
+  
     
 }
