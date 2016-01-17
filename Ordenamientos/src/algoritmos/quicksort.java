@@ -1,4 +1,6 @@
-public class Quicksort{
+package algoritmos;
+
+public class quicksort{
 
   public void quickSort(int arr[], int left, int right) {
     int index = partition(arr, left, right);
