@@ -10,26 +10,44 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Label;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
+
 
 /**
  *
- * @author Andres
+ * @author Equipo 3
  */
 public class FXMLDocumentController implements Initializable {
     
     @FXML
-    private Label label;
+    private TextField txtNombre;
+    @FXML
+    private Button btnLeer;
+    
+    private int[] datos; //datos leídos
+    private int[] datosO; //Arreglo para los datos que serán ordenados
     
     @FXML
-    private void handleButtonAction(ActionEvent event) {
-        System.out.println("You clicked me!");
-        label.setText("Hello World!");
+    private void andleButtonAction(ActionEvent event) {
+       
+    }
+    
+    @FXML
+    private void readFile(ActionEvent event){
+        if(!txtNombre.getText().equals(" ")){
+            AnalizaFile a = new AnalizaFile(txtNombre.getText());
+            datos = a.getNumbers();
+            datosO = a.getNumbers();
+        }else{
+            
+        }
     }
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+      
     }    
     
 }
