@@ -1,5 +1,7 @@
+package algoritmos;
+
 import java.util.*;
-public class OrdenamientoInsercion {
+public class ordenamientoinsercion {
 
   //  static final int DATOS = 100000;
 

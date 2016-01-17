@@ -1,5 +1,7 @@
+package algoritmos;
+
 import java.util.Arrays;
-public class Merge{
+public class merge{
 	private int iteracciones = 0;
 	public int[] merge_sort(int[] arreglo){
 		//Si lista esta vacía o de tamaño 1 ya está ordenada. Se devuelve lista tal cual
