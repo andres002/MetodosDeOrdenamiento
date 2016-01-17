@@ -5,6 +5,7 @@
  */
 package ordenamientos;
 
+import algoritmos.Insercion;
 import algoritmos.Merge;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -25,7 +26,7 @@ import javafx.scene.layout.AnchorPane;
 public class FXMLDocumentController implements Initializable {
     
     @FXML
-    private TextArea txtMerge;
+    private TextArea txtMerge, txtInsercion;
     @FXML
     private TextField txtNombre;
     @FXML
@@ -52,6 +53,10 @@ public class FXMLDocumentController implements Initializable {
         }
         setAnchorOrdenar();
         txtMerge.setText("El número de iteracciones es: "+mergeBestCase(datos.length));
+        txtInsercion.setText("Número de Comparaciones Minimas: "+((datos.length)-1)+
+                "\nNúmero de Comparaciones Maximas: "+(insercionCompMax(datos.length))+
+                "\nNúmero de Movimientos Minimos: 0"+ "\nNúmero de Movimientos Maximos: "+
+                insercionMovMax(datos.length));
         
         
     }
@@ -61,6 +66,17 @@ public class FXMLDocumentController implements Initializable {
         merge.merge_sort(datosO);
         txtMerge.setText(txtMerge.getText()+"\n"+merge.getComparaciones());
         merge.imprimir();
+    }
+    
+    @FXML
+    private void Insercion(ActionEvent event){
+        Insercion in = new Insercion();
+      //  in.ordenarInsercion(datosO);
+        txtInsercion.setText(txtInsercion.getText()+"\nDatos a ordenar: \n"+ datosO+"\n");
+        txtInsercion.setText(txtInsercion.getText()+"\nDatos Ordenados: \n"+in.ordenarInsercion(datosO));
+        txtInsercion.setText(txtInsercion.getText()+"\nComparaciones Totales: "+in.getComp()+
+                "\nMovimientos Totales: "+in.getMov());
+        
     }
     @FXML 
     private void Leer(){
@@ -86,6 +102,14 @@ public class FXMLDocumentController implements Initializable {
     
     public double mergeBestCase(int n){
         return n * Math.log(n);
+    }
+    
+    public double insercionCompMax(int n){
+        return (Math.pow(n,2)/2)-(n/2);
+    }
+    
+    public double insercionMovMax(int n){
+        return (Math.pow(n,2)/2)-(n/2);
     }
   
     

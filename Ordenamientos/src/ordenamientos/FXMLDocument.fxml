@@ -27,8 +27,8 @@
             </AnchorPane>
             <AnchorPane layoutX="26.0" layoutY="196.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="130.0" prefWidth="220.0">
                <children>
-                  <Button fx:id="btnOrdenarMerge1" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#Merge" prefHeight="25.0" prefWidth="220.0" text="Ordenar con merge" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
-                  <TextArea fx:id="txtMerge1" maxHeight="-Infinity" prefHeight="105.0" prefWidth="220.0" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                  <Button fx:id="btnOrdenarInsercion" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#Insercion" prefHeight="25.0" prefWidth="220.0" text="Ordenar con Insercion" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+                  <TextArea fx:id="txtInsercion" maxHeight="-Infinity" prefHeight="105.0" prefWidth="220.0" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                </children>
             </AnchorPane>
             <AnchorPane layoutX="26.0" layoutY="376.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="130.0" prefWidth="220.0">
