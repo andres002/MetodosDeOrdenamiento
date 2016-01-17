@@ -13,7 +13,7 @@ import javafx.stage.Stage;
 
 /**
  *
- * @author Andres
+ * @author Equipo 3
  */
 public class Ordenamientos extends Application {
     

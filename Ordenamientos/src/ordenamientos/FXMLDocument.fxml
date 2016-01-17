@@ -10,18 +10,33 @@
 
 <AnchorPane id="AnchorPane" prefHeight="464.0" prefWidth="358.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.65" fx:controller="ordenamientos.FXMLDocumentController">
    <children>
-      <AnchorPane prefHeight="464.0" prefWidth="358.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <AnchorPane fx:id="AnchorLeer" prefHeight="464.0" prefWidth="358.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
+            <TextField fx:id="txtNombre" layoutX="105.0" layoutY="169.0" />
             <Button fx:id="btnLeer" layoutX="144.0" layoutY="232.0" mnemonicParsing="false" onAction="#readFile" text="Leer datos" />
             <Label layoutX="92.0" layoutY="125.0" text="Introduzca el nombre del archivo" />
-            <TextField fx:id="txtNombre" layoutX="105.0" layoutY="169.0" />
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="10.0" layoutY="10.0" prefHeight="464.0" prefWidth="358.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <AnchorPane fx:id="AnchorOrdenar" layoutX="10.0" layoutY="10.0" prefHeight="464.0" prefWidth="358.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <Button fx:id="btnOrdenar" mnemonicParsing="false" text="Ordenar" />
+            <Button fx:id="btnOrdenar" layoutX="149.0" layoutY="77.0" mnemonicParsing="false" text="Ordenar" AnchorPane.topAnchor="77.0" />
+            <TextArea fx:id="txtArea" layoutX="73.0" layoutY="132.0" prefHeight="200.0" prefWidth="200.0" />
          </children>
       </AnchorPane>
       <AnchorPane layoutX="10.0" layoutY="10.0" prefHeight="464.0" prefWidth="358.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+      <MenuBar AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="Archivo">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Leer archivo" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Creditos">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Delete" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
    </children>
 </AnchorPane>

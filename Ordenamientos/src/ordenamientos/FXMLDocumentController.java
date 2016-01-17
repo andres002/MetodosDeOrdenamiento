@@ -12,7 +12,9 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.AnchorPane;
 
 
 /**
@@ -22,9 +24,13 @@ import javafx.scene.control.TextField;
 public class FXMLDocumentController implements Initializable {
     
     @FXML
+    private TextArea txtArea;
+    @FXML
     private TextField txtNombre;
     @FXML
-    private Button btnLeer;
+    private Button btnLeer, btnOrdenar;
+    @FXML
+    private AnchorPane AnchorLeer, AnchorOrdenar;
     
     private int[] datos; //datos leídos
     private int[] datosO; //Arreglo para los datos que serán ordenados
@@ -43,11 +49,20 @@ public class FXMLDocumentController implements Initializable {
         }else{
             
         }
+        setOrdenar();
+    }
+    private void setLeer(){
+        AnchorLeer.setVisible(true);
+        AnchorOrdenar.setVisible(false);
+    }
+    private void setOrdenar(){
+        AnchorLeer.setVisible(false);
+        AnchorOrdenar.setVisible(true);
     }
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-      
+        setLeer();
     }    
     
 }
