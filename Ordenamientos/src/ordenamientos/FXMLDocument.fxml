@@ -8,7 +8,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="464.0" prefWidth="358.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ordenamientos.FXMLDocumentController">
+<AnchorPane id="AnchorPane" prefHeight="564.0" prefWidth="527.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ordenamientos.FXMLDocumentController">
    <children>
       <AnchorPane fx:id="AnchorLeer" prefHeight="464.0" prefWidth="358.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
@@ -19,10 +19,34 @@
       </AnchorPane>
       <AnchorPane fx:id="AnchorOrdenar" layoutX="10.0" layoutY="10.0" prefHeight="464.0" prefWidth="358.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <AnchorPane layoutX="26.0" layoutY="51.0" prefHeight="117.0" prefWidth="200.0">
+            <AnchorPane layoutX="26.0" layoutY="51.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="130.0" prefWidth="220.0">
                <children>
-                  <Button fx:id="btnOrdenarMerge" mnemonicParsing="false" onAction="#Merge" text="Ordenar con merge" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
-                  <TextArea fx:id="txtMerge" prefHeight="94.0" prefWidth="200.0" />
+                  <Button fx:id="btnOrdenarMerge" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#Merge" prefHeight="25.0" prefWidth="220.0" text="Ordenar con merge" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+                  <TextArea fx:id="txtMerge" maxHeight="-Infinity" prefHeight="105.0" prefWidth="220.0" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="26.0" layoutY="196.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="130.0" prefWidth="220.0">
+               <children>
+                  <Button fx:id="btnOrdenarMerge1" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#Merge" prefHeight="25.0" prefWidth="220.0" text="Ordenar con merge" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+                  <TextArea fx:id="txtMerge1" maxHeight="-Infinity" prefHeight="105.0" prefWidth="220.0" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="26.0" layoutY="376.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="130.0" prefWidth="220.0">
+               <children>
+                  <Button fx:id="btnOrdenarMerge2" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#Merge" prefHeight="25.0" prefWidth="220.0" text="Ordenar con merge" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+                  <TextArea fx:id="txtMerge2" maxHeight="-Infinity" prefHeight="105.0" prefWidth="220.0" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="264.0" layoutY="196.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="130.0" prefWidth="220.0">
+               <children>
+                  <Button fx:id="btnOrdenarMerge3" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#Merge" prefHeight="25.0" prefWidth="220.0" text="Ordenar con merge" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+                  <TextArea fx:id="txtMerge3" maxHeight="-Infinity" prefHeight="105.0" prefWidth="220.0" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="264.0" layoutY="51.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="130.0" prefWidth="220.0">
+               <children>
+                  <Button fx:id="btnOrdenarMerge31" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#Merge" prefHeight="25.0" prefWidth="220.0" text="Ordenar con merge" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+                  <TextArea fx:id="txtMerge31" maxHeight="-Infinity" prefHeight="105.0" prefWidth="220.0" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                </children>
             </AnchorPane>
          </children>
@@ -32,7 +56,7 @@
         <menus>
           <Menu mnemonicParsing="false" text="Archivo">
             <items>
-              <MenuItem mnemonicParsing="false" text="Leer archivo" />
+              <MenuItem mnemonicParsing="false" onAction="#Leer" text="Leer archivo" />
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Creditos">

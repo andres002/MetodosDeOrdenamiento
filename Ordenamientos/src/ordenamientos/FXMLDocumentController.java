@@ -53,12 +53,18 @@ public class FXMLDocumentController implements Initializable {
         setAnchorOrdenar();
         txtMerge.setText("El número de iteracciones es: "+mergeBestCase(datos.length));
         
+        
     }
     @FXML
     private void Merge(ActionEvent event){
         Merge merge = new Merge();
         merge.merge_sort(datosO);
         txtMerge.setText(txtMerge.getText()+"\n"+merge.getComparaciones());
+        merge.imprimir();
+    }
+    @FXML 
+    private void Leer(){
+        setAnchorLeer();
     }
    
     private void setAnchorLeer(){
