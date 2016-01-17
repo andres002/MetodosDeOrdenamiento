@@ -62,6 +62,7 @@ public class Merge {
     }
 
     public void imprimir() {
+        //kk
         System.out.println("Numero de iteracciones de merge: " + iteracciones);
     }
 
