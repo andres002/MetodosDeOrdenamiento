@@ -1,29 +1,27 @@
 package algoritmos;
 
-public class Burbuja{
+public class Burbuja {
 
-	public void burbuja(int arreglo[]){
-    	long contador = 0;
+    public void burbuja(int arreglo[]) {
+        long contador = 0;
+        int i, j, aux;
+        for (i = 0; i < arreglo.length - 1; i++) {
 
-        for(int i = 0; i < arreglo.length - 1; i++){
-            for(int j = 0; j < arreglo.length - 1; j++){
-                if (arreglo[j] > arreglo[j + 1])
-                {
-                    int tmp = arreglo[j+1];
-                    arreglo[j+1] = arreglo[j];
-                    arreglo[j] = tmp;
-                    
+            for (j = 0; j < arreglo.length - i - 1; j++) {
+                contador++;
+                if (arreglo[j + 1] < arreglo[j]) {
+                    aux = arreglo[j + 1];
+                    arreglo[j + 1] = arreglo[j];
+                    arreglo[j] = aux;
                 }
-                contador++;              
             }
         }
 
-        for(int i = 0;i < arreglo.length; i++)
-        {
-            System.out.print(arreglo[i] + " ");
+        for (int x = 0; x < arreglo.length; x++) {
+            System.out.print(arreglo[x] + " ");
         }
         System.out.println("Contador: " + contador);
 
-
     }
+
 }
