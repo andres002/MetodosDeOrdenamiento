@@ -1,3 +1,5 @@
+package algoritmos;
+
 public class Burbuja{
 
 	public void burbuja(int arreglo[]){
