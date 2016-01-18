@@ -111,6 +111,10 @@ public class FXMLDocumentController implements Initializable {
     public double insercionMovMax(int n){
         return (Math.pow(n,2)/2)-(n/2);
     }
+    
+    public double BubleCase(int n){
+        return (Math.pow(n, 2))/2;
+    }
   
     
 }
