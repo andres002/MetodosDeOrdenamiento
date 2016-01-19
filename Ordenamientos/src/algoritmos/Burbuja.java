@@ -1,6 +1,10 @@
 package algoritmos;
 
 public class Burbuja {
+    
+    public long compa = 0;
+    public long inte;
+    
 
     public void burbujaA(int arreglo[]){
     	long contador = 0;
@@ -24,7 +28,9 @@ public class Burbuja {
             System.out.print(arreglo[x] + " ");
         }
         System.out.println("Compaciones: " + contador);
+        this.compa = contador;
         System.out.println("Intercambios: " + contaInter);
+        this.inte = contaInter;
 
 
     }
