@@ -8,6 +8,7 @@ package ordenamientos;
 import algoritmos.Insercion;
 import algoritmos.Merge;
 import algoritmos.Shell;
+import algoritmos.Burbuja;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -27,7 +28,7 @@ import javafx.scene.layout.AnchorPane;
 public class FXMLDocumentController implements Initializable {
     
     @FXML
-    private TextArea txtMerge, txtInsercion,txtshell;
+    private TextArea txtMerge, txtInsercion,txtshell, txtBurbuja;
     @FXML
     private TextField txtNombre;
     @FXML
@@ -53,12 +54,14 @@ public class FXMLDocumentController implements Initializable {
             
         }
         setAnchorOrdenar();
-        txtMerge.setText("El número de iteracciones es: "+mergeBestCase(datos.length));
+        txtMerge.setText("El número de Comparaciones es: "+mergeBestCase(datos.length));
         txtInsercion.setText("Número de Comparaciones Minimas: "+((datos.length)-1)+
                 "\nNúmero de Comparaciones Maximas: "+(insercionCompMax(datos.length))+
                 "\nNúmero de Movimientos Minimos: 0"+ "\nNúmero de Movimientos Maximos: "+
                 insercionMovMax(datos.length));
-        
+        txtBurbuja.setText("Numero de Comparaciones: " + BubleCase(datos.length) + 
+                "\nNumero de Intercambios mejor caso : " + BubleCase2(datos.length) +
+                "\nNumero de Intercambios peor caso : " + BubleCase(datos.length));
         
     }
     @FXML
@@ -79,6 +82,8 @@ public class FXMLDocumentController implements Initializable {
                 "\nMovimientos Totales: "+in.getMov());
         
     }
+    
+    
     @FXML
     private void Shellsort(ActionEvent event){
         Shell a = new Shell();
@@ -87,6 +92,15 @@ public class FXMLDocumentController implements Initializable {
          txtshell.setText(txtshell.getText()+"\nComparaciones Totales: "+a.getComparaciones()+
                 "\nIntercambios: "+a.getIntercambios());
     }
+    
+    @FXML
+    private void Burbuja(ActionEvent event){
+        Burbuja burbu = new Burbuja();
+        burbu.burbuja(datosO);
+       // txtMerge.setText(txtMerge.getText()+"\n"+merge.getComparaciones());
+        //merge.imprimir();
+    }
+    
     @FXML 
     private void Leer(){
         setAnchorLeer();
@@ -121,7 +135,7 @@ public class FXMLDocumentController implements Initializable {
 			x ++;
 		}
 		if(asdes == 0)
-			return 3;		
+			return 1;		
 		return asdes;
 
 	}
@@ -151,7 +165,7 @@ public class FXMLDocumentController implements Initializable {
     }
     
     
-   public double BubleCase2(int n){
+   public int BubleCase2(int n){
         return 0;  //aplica para intercambios caso mas favorable
     }
    public double ShellWorstCase(int n){
