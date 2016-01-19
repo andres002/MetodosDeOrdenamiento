@@ -7,7 +7,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="593.0" prefWidth="554.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ordenamientos.FXMLDocumentController">
+<AnchorPane id="AnchorPane" prefHeight="624.0" prefWidth="874.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ordenamientos.FXMLDocumentController">
    <children>
       <AnchorPane fx:id="AnchorOrdenar" layoutX="10.0" layoutY="10.0" prefHeight="464.0" prefWidth="535.0" AnchorPane.bottomAnchor="-8.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-8.0" AnchorPane.topAnchor="0.0">
          <children>
@@ -29,18 +29,30 @@
                   <TextArea id="txtF3" fx:id="txtMerge2" maxHeight="-Infinity" prefHeight="105.0" prefWidth="220.0" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                </children>
             </AnchorPane>
-            <AnchorPane layoutX="300.0" layoutY="51.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="160.0" prefWidth="250.0" AnchorPane.rightAnchor="20.0">
+            <AnchorPane layoutX="291.0" layoutY="51.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="160.0" prefWidth="250.0" AnchorPane.rightAnchor="341.0">
                <children>
                   <Button id="btn4" fx:id="btnBurbuja" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" prefHeight="25.0" prefWidth="220.0" style="-fx-background-radius: 0;" text="Ordenar con Burbuja" textFill="WHITE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
                   <TextArea id="txtF4" fx:id="txtBurbuja" maxHeight="-Infinity" prefHeight="105.0" prefWidth="220.0" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                </children>
             </AnchorPane>
-            <AnchorPane layoutX="292.0" layoutY="236.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="160.0" prefWidth="250.0" AnchorPane.rightAnchor="20.0">
+            <AnchorPane layoutX="291.0" layoutY="236.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="160.0" prefWidth="250.0" AnchorPane.rightAnchor="341.0">
                <children>
                   <Button id="btn5" fx:id="btnOrdenarMerge3" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#Merge" prefHeight="25.0" prefWidth="220.0" style="-fx-background-radius: 0;" text="Ordenar con Shell" textFill="WHITE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
                   <TextArea id="txtF5" fx:id="txtshell" maxHeight="-Infinity" prefHeight="105.0" prefWidth="220.0" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                </children>
             </AnchorPane>
+            <ScrollPane layoutX="570.0" layoutY="75.0" prefHeight="529.0" prefWidth="131.0" AnchorPane.topAnchor="75.0">
+               <content>
+                  <TextArea fx:id="txtdatos" prefHeight="527.0" prefWidth="129.0" wrapText="true" />
+               </content>
+            </ScrollPane>
+            <ScrollPane layoutX="722.0" layoutY="72.0" prefHeight="529.0" prefWidth="131.0" AnchorPane.topAnchor="75.0">
+               <content>
+                  <TextArea fx:id="txtDatosOrdenados" prefHeight="527.0" prefWidth="129.0" wrapText="true" />
+               </content>
+            </ScrollPane>
+            <Label layoutX="590.0" layoutY="54.0" text="Datos leídos" />
+            <Label layoutX="748.0" layoutY="53.0" text="Datos ordenados" />
          </children>
       </AnchorPane>
       <AnchorPane id="principal" fx:id="AnchorLeer" prefHeight="464.0" prefWidth="358.0" style="-fx-background-color: F4F1BB;" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
