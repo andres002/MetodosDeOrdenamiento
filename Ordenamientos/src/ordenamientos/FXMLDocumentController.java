@@ -92,7 +92,15 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private void Burbuja(ActionEvent event){
         Burbuja burbu = new Burbuja();
-        burbu.burbujaA(datosO);
+        switch(this.asdes){
+            case 2:
+                burbu.burbujaD(datosO);
+                break;
+            case 1:
+            case 3:
+                burbu.burbujaA(datosO);
+                break;
+        }
        // txtMerge.setText(txtMerge.getText()+"\n"+merge.getComparaciones());
         //merge.imprimir();
     }
