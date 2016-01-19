@@ -32,6 +32,8 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private TextField txtNombre;
     @FXML
+    private TextArea txtDatos,txtDatosO;
+    @FXML
     private Button btnLeer, btnOrdenarMerge;
     @FXML
     private AnchorPane AnchorLeer, AnchorOrdenar;
@@ -48,7 +50,10 @@ public class FXMLDocumentController implements Initializable {
             datos = a.getNumbers();
             datosO = a.getNumbers();
             verifica(datosO);
+            setDatosLeidos();
         }
+        
+        
         setAnchorOrdenar();
         txtMerge.setText("El número de Comparaciones es: "+mergeBestCase(datos.length));
         txtInsercion.setText("Número de Comparaciones Minimas: "+((datos.length)-1)+
@@ -67,6 +72,9 @@ public class FXMLDocumentController implements Initializable {
         merge.merge_sort(datosO);
         txtMerge.setText(txtMerge.getText()+"\n"+merge.getComparaciones());
         merge.imprimir();
+        setDatosOrdenados();
+        //Para recuperar el arreglo desordenado
+        getDatosLeidos();
     }
     
     @FXML
@@ -105,7 +113,29 @@ public class FXMLDocumentController implements Initializable {
                "\nNúmero de Intercambios Reales: " + burbu.inte);
         //merge.imprimir();
     }
-    
+     private void setDatosLeidos(){
+        for (int i = 0; i < datos.length; i++) {
+            txtDatos.setText(txtDatos.getText() + " "+ datos[i]+"\n");
+        }     
+    }
+    private void setDatosOrdenados(){
+        for (int i = 0; i < datosO.length; i++) {
+            txtDatosO.setText(txtDatosO.getText() + " "+ datosO[i]+"\n");
+        }  
+    }
+    private void getDatosLeidos(){
+  
+        String[] data = txtDatosO.getText().split("\n");
+        int aux = 0;
+        for (int i = 0; i < data.length; i++) {
+            if(!" ".equals(data[i]) ){
+                datosO[aux] = Integer.parseInt(data[i].replace(" ",""));    
+                aux++;
+            }
+        }
+   
+ 
+    }
     @FXML 
     private void Leer(){
         setAnchorLeer();
@@ -152,7 +182,7 @@ public class FXMLDocumentController implements Initializable {
 /* Comparaciones del merge según el caso*/
     
     public double mergeBestCase(int n){
-        return n * Math.log(n);
+        return n * Math.log(n) /Math.log(2);
     }
     
     public double insercionCompMax(int n){
