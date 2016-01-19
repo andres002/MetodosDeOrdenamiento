@@ -64,7 +64,7 @@ public class FXMLDocumentController implements Initializable {
                 "\nNumero de Intercambios mejor caso : " + BubleCase2(datos.length) +
                 "\nNumero de Intercambios peor caso : " + BubleCase(datos.length));
          txtshell.setText("Numero de intercambios mejor caso: "+ShellBestCase(datos.length)+"\nNuemro de intercambios"
-                + "peor caso "+ShellWorstCase(datos.length));
+                + " peor caso "+ShellWorstCase(datos.length)+"\nNumero de intercambios caso medio: "+middlecase(datos.length));
     }
     @FXML
     private void Merge(ActionEvent event){
@@ -92,8 +92,8 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private void Shellsort(ActionEvent event){
         Shell a = new Shell();
-        a.shell(datos);
-        txtshell.setText("Comparaciones reales: "+a.getComparaciones()+" \nIntercambios reales: "+a.getIntercambios());
+        a.shellA(datos);
+        txtshell.setText("Intercambios reales: "+a.getIntercambios());
         
     }
     
@@ -201,11 +201,15 @@ public class FXMLDocumentController implements Initializable {
    public int BubleCase2(int n){
         return 0;  //aplica para intercambios caso mas favorable
     }
-   public double ShellWorstCase(int n){
-        return n*Math.pow(Math.log(n),2);
+   public int ShellWorstCase(int n){
+         return (int)Math.pow(n, 1.333);
     }
-    public double ShellBestCase(int n){
-        return n*Math.log(n);
+    public int ShellBestCase(int n){
+        return (int)(n*Math.log10(n));
+    
+    }
+    public int middlecase(int n){
+        return (int)Math.pow(n, 1.166);
     
     }
     
