@@ -8,13 +8,12 @@ public class Insercion {
     public int[] ordenarInsercion(int[] array){     
         int aux;
         for (int i = 1; i < array.length; i++) {
-             movimientos++;
+             comparaciones++;
             aux = array[i];
             
             for (int j = i-1; j >=0 && array[j]>aux; j--) {
-                comparaciones=comparaciones+1;
+                comparaciones++;
                 array[j+1]=array[j];
-            //    movimientos=movimientos+1;
                 array[j]=aux;
                  movimientos++;
             }  

@@ -10,6 +10,7 @@ import algoritmos.Merge;
 import algoritmos.Shell;
 import algoritmos.Burbuja;
 import java.net.URL;
+import java.util.Random;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -52,16 +53,16 @@ public class FXMLDocumentController implements Initializable {
             verifica(datosO);
             setDatosLeidos();
         }
-        
+   
         
         setAnchorOrdenar();
-        txtMerge.setText("El número de Comparaciones es: "+mergeBestCase(datos.length));
+        txtMerge.setText("Número de Comparaciones: "+mergeBestCase(datos.length));
         if (this.asdes==1){
             txtInsercion.setText("Número de Comparaciones: "+((datos.length)-1)+
                     "\nNúmero de Intercambios: 0");
         }else{
         txtInsercion.setText("Número de Comparaciones: "+(insercionCompMax(datos.length))+
-                 "\nNúmero de Movimientos: "+insercionMovMax(datos.length));
+                 "\nNúmero de Intercambios: "+insercionMovMax(datos.length));
        }
         txtBurbuja.setText("Numero de Comparaciones: " + BubleCase(datos.length) + 
                 "\nNumero de Intercambios mejor caso : " + BubleCase2(datos.length) +
@@ -73,7 +74,7 @@ public class FXMLDocumentController implements Initializable {
     private void Merge(ActionEvent event){
         Merge merge = new Merge();
         merge.merge_sort(datosO);
-        txtMerge.setText(txtMerge.getText()+"\n"+merge.getComparaciones());
+        txtMerge.setText(txtMerge.getText()+"\nComparaciones Totales: "+merge.getComparaciones());
         merge.imprimir();
         setDatosOrdenados();
         //Para recuperar el arreglo desordenado
@@ -86,6 +87,9 @@ public class FXMLDocumentController implements Initializable {
         in.ordenarInsercion(datosO);
         txtInsercion.setText(txtInsercion.getText()+"\nComparaciones Totales: "+in.getComp()+
                 "\nIntercambios Totales: "+in.getMov());
+         setDatosOrdenados();
+        //Para recuperar el arreglo desordenado
+        getDatosLeidos();
         
     }
     
@@ -113,6 +117,9 @@ public class FXMLDocumentController implements Initializable {
        txtBurbuja.setText(txtBurbuja.getText()+"\nNúmero de Comparaciones Reales: "+ burbu.compa +
                "\nNúmero de Intercambios Reales: " + burbu.inte);
         //merge.imprimir();
+       setDatosOrdenados();
+        //Para recuperar el arreglo desordenado
+        getDatosLeidos();
     }
      private void setDatosLeidos(){
         for (int i = 0; i < datos.length; i++) {
