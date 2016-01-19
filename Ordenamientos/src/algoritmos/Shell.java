@@ -13,19 +13,19 @@ package algoritmos;
 public class Shell {
    int intercambios = 0;
    int comparaciones =1;
-   public void shell(int A[]){
+   public void shellA(int A[]){
        
    int salto, aux, i;
    boolean cambios;
    for(salto=A.length/2; salto!=0; salto/=2){
            cambios=true;
            while(cambios){ // Mientras se intercambie algún elemento
-                intercambios++;
+               
                        cambios=false;
                        for(i=salto; i< A.length; i++) // se da una pasada
                            
                                if(A[i-salto]>A[i]){ // y si están desordenados
-                                   comparaciones++;
+                                    intercambios++;
                                      aux=A[i]; // se reordenan
                                      A[i]=A[i-salto];
                                      A[i-salto]=aux;
@@ -35,18 +35,19 @@ public class Shell {
             }
    
 }
-   public void shell2(int A[]){
+   public void shellD(int A[]){
        
    int salto, aux, i;
    boolean cambios;
    for(salto=A.length/2; salto!=0; salto/=2){
            cambios=true;
            while(cambios){ // Mientras se intercambie algún elemento
-                intercambios++;
+            
                        cambios=false;
                        for(i=salto; i< A.length; i++) // se da una pasada
-                           comparaciones++;
+                           
                                if(A[i-salto]<A[i]){ // y si están desordenados
+                                   intercambios++;
                                      aux=A[i]; // se reordenan
                                      A[i]=A[i-salto];
                                      A[i-salto]=aux;
@@ -56,7 +57,6 @@ public class Shell {
             }
    
 }
-   
    public int getIntercambios(){
        return intercambios;
    
