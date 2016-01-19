@@ -138,8 +138,12 @@ public class FXMLDocumentController implements Initializable {
     }
     
     public double BubleCase(int n){
-        return ((Math.pow(n, 2))-n)/2;
+        return ((Math.pow(n, 2))-n)/2;  //aplica para Comparaciones e intercambios mas desfavorables
     }
-  
+    
+    
+   public double BubleCase2(int n){
+        return 0;  //aplica para intercambios caso mas favorable
+    }
     
 }

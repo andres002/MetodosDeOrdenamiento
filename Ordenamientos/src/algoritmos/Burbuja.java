@@ -4,6 +4,7 @@ public class Burbuja {
 
     public void burbuja(int arreglo[]){
     	long contador = 0;
+        long contaInter = 0;
  		int i, j, aux;
          for(i=0;i<arreglo.length-1;i++){
 
@@ -13,6 +14,7 @@ public class Burbuja {
                       aux=arreglo[j+1];
                       arreglo[j+1]=arreglo[j];
                       arreglo[j]=aux;
+                      contaInter++;
                    }
                }
            }
@@ -21,7 +23,8 @@ public class Burbuja {
         {
             System.out.print(arreglo[x] + " ");
         }
-        System.out.println("Contador: " + contador);
+        System.out.println("Compaciones: " + contador);
+        System.out.println("Intercambios: " + contaInter);
 
 
     }
