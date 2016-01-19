@@ -7,7 +7,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="624.0" prefWidth="874.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ordenamientos.FXMLDocumentController">
+<AnchorPane id="AnchorPane" prefHeight="624.0" prefWidth="874.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ordenamientos.FXMLDocumentController">
    <children>
       <AnchorPane fx:id="AnchorOrdenar" layoutX="10.0" layoutY="10.0" prefHeight="464.0" prefWidth="535.0" AnchorPane.bottomAnchor="-8.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-8.0" AnchorPane.topAnchor="0.0">
          <children>
@@ -53,6 +53,12 @@
             </ScrollPane>
             <Label layoutX="590.0" layoutY="54.0" text="Datos leídos" />
             <Label layoutX="748.0" layoutY="53.0" text="Datos ordenados" />
+            <AnchorPane layoutX="291.0" layoutY="420.0" prefHeight="160.0" prefWidth="250.0">
+               <children>
+                  <Button fx:id="btnQuick" layoutY="134.0" mnemonicParsing="false" onAction="#QuicSort" prefHeight="25.0" prefWidth="250.0" text="Ordena Con QuickSort" />
+                  <TextArea fx:id="txtQuick" prefHeight="135.0" prefWidth="250.0" />
+               </children>
+            </AnchorPane>
          </children>
       </AnchorPane>
       <AnchorPane id="principal" fx:id="AnchorLeer" prefHeight="464.0" prefWidth="358.0" style="-fx-background-color: F4F1BB;" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">

@@ -9,13 +9,14 @@ import algoritmos.Insercion;
 import algoritmos.Merge;
 import algoritmos.Shell;
 import algoritmos.Burbuja;
+import algoritmos.quicksort;
 import java.net.URL;
 import java.util.Random;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Alert;
+//import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
@@ -30,6 +31,10 @@ public class FXMLDocumentController implements Initializable {
     
     @FXML
     private TextArea txtMerge, txtInsercion,txtshell, txtBurbuja;
+    @FXML
+    private TextArea txtQuick;
+    @FXML
+    private Button btnQuick;
     @FXML
     private TextField txtNombre;
     @FXML
@@ -131,6 +136,17 @@ public class FXMLDocumentController implements Initializable {
             txtDatosO.setText(txtDatosO.getText() + " "+ datosO[i]+"\n");
         }  
     }
+    @FXML
+    private void QuicSort(ActionEvent event){
+        quicksort quick = new quicksort();
+        int iz = 0;
+        int der = datosO.length-1;
+        quick.quickSort(datosO, iz, der);
+        double result = QuickBestCase(datos.length);
+        double resultbadcase= QuickWorstCase(datos.length);
+        txtQuick.setText("El mejor Caso: "+Double.toString(result)+"\n El peor Caso: "+Double.toString(resultbadcase)+"\n"
+                + "\nNum de Movimientos: "+quick.Getmov()+"\nNum de Intercambios: "+quick.Getinter());
+    }
     private void getDatosLeidos(){
   
         String[] data = txtDatosO.getText().split("\n");
@@ -219,6 +235,14 @@ public class FXMLDocumentController implements Initializable {
     public int middlecase(int n){
         return (int)Math.pow(n, 1.166);
     
+    }
+    
+     public double QuickBestCase(int n){
+        return (int)n*Math.log(n);
+    }    
+    
+    public double QuickWorstCase(int n){
+        return (int)Math.pow(n, 2);
     }
     
 }
