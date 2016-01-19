@@ -2,7 +2,7 @@ package algoritmos;
 
 public class Burbuja {
 
-    public void burbuja(int arreglo[]){
+    public void burbujaA(int arreglo[]){
     	long contador = 0;
         long contaInter = 0;
  		int i, j, aux;
@@ -25,6 +25,34 @@ public class Burbuja {
         }
         System.out.println("Compaciones: " + contador);
         System.out.println("Intercambios: " + contaInter);
+
+
+    }
+    
+    
+    public void burbujaD(int arreglo[]){
+    	long contador = 0;
+       long contaInter = 0;
+ 		int i, j, aux;
+         for(i=0;i<arreglo.length-1;i++){
+
+              for(j=0;j<arreglo.length-i-1;j++){
+              	contador++;
+                   if(arreglo[j+1]>arreglo[j]){
+                    contaInter++;
+                      aux=arreglo[j+1];
+                      arreglo[j+1]=arreglo[j];
+                      arreglo[j]=aux;
+                   }
+               }
+           }
+
+        for(int x = 0;x < arreglo.length; x++)
+        {
+            System.out.print(arreglo[x] + " ");
+        }
+        System.out.println("Comparaciones: " + contador);
+         System.out.println("Intercambios: " + contaInter);
 
 
     }
