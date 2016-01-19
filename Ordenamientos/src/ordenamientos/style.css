@@ -1,9 +1,7 @@
 #menu{
    -fx-background-color:  #BDBDBD;
 }
-#AnchorPane{
-    -fx-background-image: url("background3.png");
-}
+
 #txtF1{
     -fx-background-color:  #69F0AE;
 }
