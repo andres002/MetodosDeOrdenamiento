@@ -7,6 +7,7 @@ package ordenamientos;
 
 import algoritmos.Insercion;
 import algoritmos.Merge;
+import algoritmos.Shell;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -26,7 +27,7 @@ import javafx.scene.layout.AnchorPane;
 public class FXMLDocumentController implements Initializable {
     
     @FXML
-    private TextArea txtMerge, txtInsercion;
+    private TextArea txtMerge, txtInsercion,txtshell;
     @FXML
     private TextField txtNombre;
     @FXML
@@ -77,6 +78,14 @@ public class FXMLDocumentController implements Initializable {
         txtInsercion.setText(txtInsercion.getText()+"\nComparaciones Totales: "+in.getComp()+
                 "\nMovimientos Totales: "+in.getMov());
         
+    }
+    @FXML
+    private void Shellsort(ActionEvent event){
+        Shell a = new Shell();
+         txtshell.setText(txtshell.getText()+"\nDatos a ordenar: \n"+ datosO+"\n");
+         txtInsercion.setText(txtInsercion.getText()+"\nDatos Ordenados: \n"+a.shell(datosO));
+         txtshell.setText(txtshell.getText()+"\nComparaciones Totales: "+a.getComparaciones()+
+                "\nIntercambios: "+a.getIntercambios());
     }
     @FXML 
     private void Leer(){
@@ -144,6 +153,13 @@ public class FXMLDocumentController implements Initializable {
     
    public double BubleCase2(int n){
         return 0;  //aplica para intercambios caso mas favorable
+    }
+   public double ShellWorstCase(int n){
+        return n*Math.pow(Math.log(n),2);
+    }
+    public double ShellBestCase(int n){
+        return n*Math.log(n);
+    
     }
     
 }
