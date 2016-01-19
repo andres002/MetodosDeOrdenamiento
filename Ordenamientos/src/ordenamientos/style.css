@@ -1,0 +1,55 @@
+#menu{
+   -fx-background-color:  #BDBDBD;
+}
+#AnchorPane{
+    -fx-background-image: url("background3.png");
+}
+#txtF1{
+    -fx-background-color:  #69F0AE;
+}
+#txtF1:hover{
+    -fx-background-color:  #00E676;
+}
+#btn1{
+    -fx-background-color: #00E676;
+}
+#txtF2{
+    -fx-background-color:  #FFE082;
+}
+#txtF2:hover{
+    -fx-background-color:  #FFD54F;
+}
+#btn2{
+    -fx-background-color: #FFD54F;
+}
+#txtF3{
+    -fx-background-color:  #FF5252;
+}
+#txtF3:hover{
+    -fx-background-color:  #FF1744;
+}
+#btn3{
+    -fx-background-color: #FF1744;
+}
+#txtF4{
+    -fx-background-color:  #40C4FF;
+}
+#txtF4:hover{
+    -fx-background-color:  #00B0FF;
+}
+#btn4{
+    -fx-background-color: #00B0FF;
+}
+#txtF5{
+    -fx-background-color:  #80DEEA;
+}
+#txtF5:hover{
+    -fx-background-color:  #4DD0E1;
+}
+#btn5{
+    -fx-background-color: #4DD0E1;
+}
+#principal{
+    -fx-background-color: #F4F1BB;
+    
+}
