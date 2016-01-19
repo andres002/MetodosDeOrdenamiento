@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.text.*?>
 <?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
@@ -25,8 +22,8 @@
             </AnchorPane>
             <AnchorPane layoutX="26.0" layoutY="423.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="160.0" prefWidth="250.0" AnchorPane.leftAnchor="20.0">
                <children>
-                  <Button id="btn3" fx:id="btnOrdenarMerge2" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#Merge" prefHeight="25.0" prefWidth="220.0" style="-fx-background-radius: 0;" text="Ordenar con merge" textFill="WHITE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
-                  <TextArea id="txtF3" fx:id="txtMerge2" maxHeight="-Infinity" prefHeight="105.0" prefWidth="220.0" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                  <Button id="btn3" fx:id="btnOrdenarQuick" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" prefHeight="25.0" prefWidth="220.0" style="-fx-background-radius: 0;" text="Ordenar con Quick Sort" textFill="WHITE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+                  <TextArea id="txtF3" fx:id="txtQuick" maxHeight="-Infinity" prefHeight="105.0" prefWidth="220.0" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                </children>
             </AnchorPane>
             <AnchorPane layoutX="291.0" layoutY="51.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="160.0" prefWidth="250.0" AnchorPane.rightAnchor="341.0">
@@ -37,7 +34,7 @@
             </AnchorPane>
             <AnchorPane layoutX="291.0" layoutY="236.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="160.0" prefWidth="250.0" AnchorPane.rightAnchor="341.0">
                <children>
-                  <Button id="btn5" fx:id="btnOrdenarMerge3" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#Shellsort" prefHeight="25.0" prefWidth="220.0" style="-fx-background-radius: 0;" text="Ordenar con Shell" textFill="WHITE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+                  <Button id="btn5" fx:id="btnOrdenarShell" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#Shellsort" prefHeight="25.0" prefWidth="220.0" style="-fx-background-radius: 0;" text="Ordenar con Shell" textFill="WHITE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
                   <TextArea id="txtF5" fx:id="txtshell" maxHeight="-Infinity" prefHeight="105.0" prefWidth="220.0" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                </children>
             </AnchorPane>

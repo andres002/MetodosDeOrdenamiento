@@ -23,7 +23,7 @@ public class Shell {
                
                        cambios=false;
                        for(i=salto; i< A.length; i++) // se da una pasada
-                           
+                       { comparaciones++;
                                if(A[i-salto]>A[i]){ // y si están desordenados
                                     intercambios++;
                                      aux=A[i]; // se reordenan
@@ -32,6 +32,7 @@ public class Shell {
                                      cambios=true; // y se marca como cambio.
                                }
                         }
+           }
             }
    
 }
