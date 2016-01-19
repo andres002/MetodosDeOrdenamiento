@@ -58,7 +58,8 @@ public class FXMLDocumentController implements Initializable {
         txtBurbuja.setText("Numero de Comparaciones: " + BubleCase(datos.length) + 
                 "\nNumero de Intercambios mejor caso : " + BubleCase2(datos.length) +
                 "\nNumero de Intercambios peor caso : " + BubleCase(datos.length));
-        
+         txtshell.setText("Numero de intercambios mejor caso: "+ShellBestCase(datos.length)+"\nNuemro de intercambios"
+                + "peor caso "+ShellWorstCase(datos.length));
     }
     @FXML
     private void Merge(ActionEvent event){
@@ -83,10 +84,9 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private void Shellsort(ActionEvent event){
         Shell a = new Shell();
-         txtshell.setText(txtshell.getText()+"\nDatos a ordenar: \n"+ datosO+"\n");
-         txtInsercion.setText(txtInsercion.getText()+"\nDatos Ordenados: \n"+a.shell(datosO));
-         txtshell.setText(txtshell.getText()+"\nComparaciones Totales: "+a.getComparaciones()+
-                "\nIntercambios: "+a.getIntercambios());
+        a.shell(datos);
+        txtshell.setText("Comparaciones reales: "+a.getComparaciones()+" \nIntercambios reales: "+a.getIntercambios());
+        
     }
     
     @FXML
