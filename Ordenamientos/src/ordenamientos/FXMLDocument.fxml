@@ -7,7 +7,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="624.0" prefWidth="874.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ordenamientos.FXMLDocumentController">
+<AnchorPane id="AnchorPane" prefHeight="624.0" prefWidth="874.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ordenamientos.FXMLDocumentController">
    <children>
       <AnchorPane fx:id="AnchorOrdenar" layoutX="10.0" layoutY="10.0" prefHeight="464.0" prefWidth="535.0" AnchorPane.bottomAnchor="-8.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-8.0" AnchorPane.topAnchor="0.0">
          <children>
@@ -37,18 +37,18 @@
             </AnchorPane>
             <AnchorPane layoutX="291.0" layoutY="236.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="160.0" prefWidth="250.0" AnchorPane.rightAnchor="341.0">
                <children>
-                  <Button id="btn5" fx:id="btnOrdenarMerge3" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#Merge" prefHeight="25.0" prefWidth="220.0" style="-fx-background-radius: 0;" text="Ordenar con Shell" textFill="WHITE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+                  <Button id="btn5" fx:id="btnOrdenarMerge3" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#Shellsort" prefHeight="25.0" prefWidth="220.0" style="-fx-background-radius: 0;" text="Ordenar con Shell" textFill="WHITE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
                   <TextArea id="txtF5" fx:id="txtshell" maxHeight="-Infinity" prefHeight="105.0" prefWidth="220.0" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                </children>
             </AnchorPane>
             <ScrollPane layoutX="570.0" layoutY="75.0" prefHeight="529.0" prefWidth="131.0" AnchorPane.topAnchor="75.0">
                <content>
-                  <TextArea fx:id="txtdatos" prefHeight="527.0" prefWidth="129.0" wrapText="true" />
+                  <TextArea fx:id="txtDatos" prefHeight="527.0" prefWidth="129.0" wrapText="true" />
                </content>
             </ScrollPane>
             <ScrollPane layoutX="722.0" layoutY="72.0" prefHeight="529.0" prefWidth="131.0" AnchorPane.topAnchor="75.0">
                <content>
-                  <TextArea fx:id="txtDatosOrdenados" prefHeight="527.0" prefWidth="129.0" wrapText="true" />
+                  <TextArea fx:id="txtDatosO" prefHeight="527.0" prefWidth="129.0" wrapText="true" />
                </content>
             </ScrollPane>
             <Label layoutX="590.0" layoutY="54.0" text="Datos leídos" />

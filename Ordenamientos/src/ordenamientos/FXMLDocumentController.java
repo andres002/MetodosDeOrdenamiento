@@ -32,6 +32,8 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private TextField txtNombre;
     @FXML
+    private TextArea txtDatos,txtDatosO;
+    @FXML
     private Button btnLeer, btnOrdenarMerge;
     @FXML
     private AnchorPane AnchorLeer, AnchorOrdenar;
@@ -48,7 +50,10 @@ public class FXMLDocumentController implements Initializable {
             datos = a.getNumbers();
             datosO = a.getNumbers();
             verifica(datosO);
+            setDatosLeidos();
         }
+        
+        
         setAnchorOrdenar();
         txtMerge.setText("El número de Comparaciones es: "+mergeBestCase(datos.length));
         if (this.asdes==1){
@@ -61,7 +66,8 @@ public class FXMLDocumentController implements Initializable {
         txtBurbuja.setText("Numero de Comparaciones: " + BubleCase(datos.length) + 
                 "\nNumero de Intercambios mejor caso : " + BubleCase2(datos.length) +
                 "\nNumero de Intercambios peor caso : " + BubleCase(datos.length));
-        
+         txtshell.setText("Numero de intercambios mejor caso: "+ShellBestCase(datos.length)+"\nNuemro de intercambios"
+                + "peor caso "+ShellWorstCase(datos.length));
     }
     @FXML
     private void Merge(ActionEvent event){
@@ -69,6 +75,9 @@ public class FXMLDocumentController implements Initializable {
         merge.merge_sort(datosO);
         txtMerge.setText(txtMerge.getText()+"\n"+merge.getComparaciones());
         merge.imprimir();
+        setDatosOrdenados();
+        //Para recuperar el arreglo desordenado
+        getDatosLeidos();
     }
     
     @FXML
@@ -84,10 +93,9 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private void Shellsort(ActionEvent event){
         Shell a = new Shell();
-         txtshell.setText(txtshell.getText()+"\nDatos a ordenar: \n"+ datosO+"\n");
-         txtInsercion.setText(txtInsercion.getText()+"\nDatos Ordenados: \n"+a.shell(datosO));
-         txtshell.setText(txtshell.getText()+"\nComparaciones Totales: "+a.getComparaciones()+
-                "\nIntercambios: "+a.getIntercambios());
+        a.shell(datos);
+        txtshell.setText("Comparaciones reales: "+a.getComparaciones()+" \nIntercambios reales: "+a.getIntercambios());
+        
     }
     
     @FXML
@@ -106,7 +114,29 @@ public class FXMLDocumentController implements Initializable {
                "\nNúmero de Intercambios Reales: " + burbu.inte);
         //merge.imprimir();
     }
-    
+     private void setDatosLeidos(){
+        for (int i = 0; i < datos.length; i++) {
+            txtDatos.setText(txtDatos.getText() + " "+ datos[i]+"\n");
+        }     
+    }
+    private void setDatosOrdenados(){
+        for (int i = 0; i < datosO.length; i++) {
+            txtDatosO.setText(txtDatosO.getText() + " "+ datosO[i]+"\n");
+        }  
+    }
+    private void getDatosLeidos(){
+  
+        String[] data = txtDatosO.getText().split("\n");
+        int aux = 0;
+        for (int i = 0; i < data.length; i++) {
+            if(!" ".equals(data[i]) ){
+                datosO[aux] = Integer.parseInt(data[i].replace(" ",""));    
+                aux++;
+            }
+        }
+   
+ 
+    }
     @FXML 
     private void Leer(){
         setAnchorLeer();
@@ -153,7 +183,7 @@ public class FXMLDocumentController implements Initializable {
 /* Comparaciones del merge según el caso*/
     
     public double mergeBestCase(int n){
-        return n * Math.log(n);
+        return n * Math.log(n) /Math.log(2);
     }
     
     public double insercionCompMax(int n){

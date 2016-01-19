@@ -22,11 +22,14 @@ public class Merge {
                 } else {
                     tempB[index++] = arreglo[i];
                 }
+                
             }
+            
             int[] izq = merge_sort(tempA);
             int[] der = merge_sort(tempB);
+            
             return merge(izq, der);
-        }
+            }
     }
 
     public int[] merge(int[] izq, int[] der) {
@@ -34,6 +37,7 @@ public class Merge {
         int j = 0; //indece der
         int index = 0;
         int[] resultado = new int[izq.length + der.length];
+        
         while (i < izq.length && j < der.length) {
             if (izq[i] < der[j]) {
                 resultado[index++] = izq[i++];
@@ -46,13 +50,13 @@ public class Merge {
         }
         while (i < izq.length) {    // Copia el resto de la mitad izq
             resultado[index++] = izq[i++];
-            iteracciones++;
-
+           // iteracciones++;
+            comparaciones++;
+        
         }
         while (j < der.length) { //Copia el resto de la mitad der
             resultado[index++] = der[j++];
-            iteracciones++;
-
+            comparaciones++;
         }
         return resultado;
 
