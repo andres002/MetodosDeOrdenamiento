@@ -38,11 +38,8 @@ public class FXMLDocumentController implements Initializable {
     
     private int[] datos; //datos leídos
     private int[] datosO; //Arreglo para los datos que serán ordenados
+    int asdes = 0; // 1-- Ascendente  2.-- Descendente  3.-- Desordenado
     
-    @FXML
-    private void andleButtonAction(ActionEvent event) {
-       
-    }
     
     @FXML
     private void readFile(ActionEvent event){
@@ -50,8 +47,7 @@ public class FXMLDocumentController implements Initializable {
             AnalizaFile a = new AnalizaFile(txtNombre.getText());
             datos = a.getNumbers();
             datosO = a.getNumbers();
-        }else{
-            
+            verifica(datosO);
         }
         setAnchorOrdenar();
         txtMerge.setText("El número de Comparaciones es: "+mergeBestCase(datos.length));
@@ -96,7 +92,7 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private void Burbuja(ActionEvent event){
         Burbuja burbu = new Burbuja();
-        burbu.burbuja(datosO);
+        burbu.burbujaA(datosO);
        // txtMerge.setText(txtMerge.getText()+"\n"+merge.getComparaciones());
         //merge.imprimir();
     }
@@ -116,27 +112,25 @@ public class FXMLDocumentController implements Initializable {
     }
     
     
-    public int verifica(int[] arreglo){
+    public void verifica(int[] arreglo){// 1-- Ascendente  2.-- Descendente  3.-- Desordenado
 		int pos;
-		int buffer ='\0';
-		int asdes= 0; // 1-- Ascendente  2.-- Descendente  3.-- Desordenado
+		int buffer ='\0'; 
 		int x = 0;
 		while(x < arreglo.length){
 			if(buffer != '\0'){
-				if(buffer < arreglo[x] && (asdes == 1 || asdes == 0)){
-					asdes = 1;
-				}else if(buffer > arreglo[x] && (asdes == 2 || asdes == 0)){
-					asdes = 2;
+				if(buffer < arreglo[x] && (this.asdes == 1 || this.asdes == 0)){
+					this.asdes = 1;
+				}else if(buffer > arreglo[x] && (this.asdes == 2 || this.asdes == 0)){
+					this.asdes = 2;
 				}else{
-					asdes =3;
+					this.asdes =3;
 				}
 			}
 			buffer= arreglo[x];
 			x ++;
 		}
-		if(asdes == 0)
-			return 1;		
-		return asdes;
+		if(this.asdes == 0)
+			this.asdes = 1;		
 
 	}
     
