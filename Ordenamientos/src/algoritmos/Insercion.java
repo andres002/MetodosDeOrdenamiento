@@ -2,22 +2,21 @@ package algoritmos;
 
 import java.util.*;
 public class Insercion {
-    int Mov=0;
-    int Comp=1;
+    int movimientos=0;
+    int comparaciones=0;
 
     public int[] ordenarInsercion(int[] array){     
         int aux;
-        
         for (int i = 1; i < array.length; i++) {
+             movimientos++;
             aux = array[i];
-            Comp=Comp+1;
+            
             for (int j = i-1; j >=0 && array[j]>aux; j--) {
-                Comp=Comp+1;
+                comparaciones=comparaciones+1;
                 array[j+1]=array[j];
-                Mov=Mov+1;
+            //    movimientos=movimientos+1;
                 array[j]=aux;
-                 Mov=Mov+1;
-                 
+                 movimientos++;
             }  
         }
         return array;
@@ -25,10 +24,12 @@ public class Insercion {
     
     
     public int getMov(){
-        return Mov;
+        System.out.println("mov " + movimientos);
+        return movimientos;
     }
     
     public int getComp(){
-        return Comp;
+        System.out.println("comp "+ comparaciones);
+        return comparaciones;
     }
 }

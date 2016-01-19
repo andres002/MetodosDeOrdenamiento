@@ -51,10 +51,13 @@ public class FXMLDocumentController implements Initializable {
         }
         setAnchorOrdenar();
         txtMerge.setText("El número de Comparaciones es: "+mergeBestCase(datos.length));
-        txtInsercion.setText("Número de Comparaciones Minimas: "+((datos.length)-1)+
-                "\nNúmero de Comparaciones Maximas: "+(insercionCompMax(datos.length))+
-                "\nNúmero de Movimientos Minimos: 0"+ "\nNúmero de Movimientos Maximos: "+
-                insercionMovMax(datos.length));
+        if (this.asdes==1){
+            txtInsercion.setText("Número de Comparaciones: "+((datos.length)-1)+
+                    "\nNúmero de Intercambios: 0");
+        }else{
+        txtInsercion.setText("Número de Comparaciones: "+(insercionCompMax(datos.length))+
+                 "\nNúmero de Movimientos: "+insercionMovMax(datos.length));
+       }
         txtBurbuja.setText("Numero de Comparaciones: " + BubleCase(datos.length) + 
                 "\nNumero de Intercambios mejor caso : " + BubleCase2(datos.length) +
                 "\nNumero de Intercambios peor caso : " + BubleCase(datos.length));
@@ -71,11 +74,9 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private void Insercion(ActionEvent event){
         Insercion in = new Insercion();
-      //  in.ordenarInsercion(datosO);
-        txtInsercion.setText(txtInsercion.getText()+"\nDatos a ordenar: \n"+ datosO+"\n");
-        txtInsercion.setText(txtInsercion.getText()+"\nDatos Ordenados: \n"+in.ordenarInsercion(datosO));
+        in.ordenarInsercion(datosO);
         txtInsercion.setText(txtInsercion.getText()+"\nComparaciones Totales: "+in.getComp()+
-                "\nMovimientos Totales: "+in.getMov());
+                "\nIntercambios Totales: "+in.getMov());
         
     }
     
