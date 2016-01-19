@@ -58,8 +58,9 @@ public class Burbuja {
             System.out.print(arreglo[x] + " ");
         }
         System.out.println("Comparaciones: " + contador);
+        this.compa = contador;
          System.out.println("Intercambios: " + contaInter);
-
+         this.inte = contaInter;
 
     }
 

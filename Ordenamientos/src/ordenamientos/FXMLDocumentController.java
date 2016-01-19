@@ -101,8 +101,8 @@ public class FXMLDocumentController implements Initializable {
                 burbu.burbujaA(datosO);
                 break;
         }
-       txtBurbuja.setText(txtMerge.getText()+"\nNúmero de Comparaciones Reales"+burbu.compa +
-               "\nNúmero de Intercambios Reales " + burbu.inte);
+       txtBurbuja.setText(txtBurbuja.getText()+"\nNúmero de Comparaciones Reales: "+ burbu.compa +
+               "\nNúmero de Intercambios Reales: " + burbu.inte);
         //merge.imprimir();
     }
     
