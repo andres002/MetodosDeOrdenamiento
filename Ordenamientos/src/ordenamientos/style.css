@@ -47,6 +47,10 @@
 #btn5{
     -fx-background-color: #4DD0E1;
 }
+#btnQuick{
+    -fx-background-color: #FF1744;
+}
+
 #principal{
     -fx-background-color: #F4F1BB;
     
