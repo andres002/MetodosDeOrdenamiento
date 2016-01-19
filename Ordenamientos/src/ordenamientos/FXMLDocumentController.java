@@ -93,6 +93,31 @@ public class FXMLDocumentController implements Initializable {
     }
     
     
+    public int verifica(int[] arreglo){
+		int pos;
+		int buffer ='\0';
+		int asdes= 0; // 1-- Ascendente  2.-- Descendente  3.-- Desordenado
+		int x = 0;
+		while(x < arreglo.length){
+			if(buffer != '\0'){
+				if(buffer < arreglo[x] && (asdes == 1 || asdes == 0)){
+					asdes = 1;
+				}else if(buffer > arreglo[x] && (asdes == 2 || asdes == 0)){
+					asdes = 2;
+				}else{
+					asdes =3;
+				}
+			}
+			buffer= arreglo[x];
+			x ++;
+		}
+		if(asdes == 0)
+			return 3;		
+		return asdes;
+
+	}
+    
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         setAnchorLeer();
@@ -113,7 +138,7 @@ public class FXMLDocumentController implements Initializable {
     }
     
     public double BubleCase(int n){
-        return (Math.pow(n, 2))/2;
+        return ((Math.pow(n, 2))-n)/2;
     }
   
     
