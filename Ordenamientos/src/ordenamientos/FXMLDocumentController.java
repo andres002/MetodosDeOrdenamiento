@@ -152,6 +152,7 @@ public class FXMLDocumentController implements Initializable {
         double resultbadcase= QuickWorstCase(datos.length);
         txtQuick.setText("El mejor Caso: "+Double.toString(result)+"\n El peor Caso: "+Double.toString(resultbadcase)+"\n"
                 + "\nNum de Movimientos: "+quick.Getmov()+"\nNum de Intercambios: "+quick.Getinter());
+        setDatosOrdenados();
     }
     private void getDatosLeidos(){
   
@@ -240,7 +241,7 @@ public class FXMLDocumentController implements Initializable {
     }
     
      public double QuickBestCase(int n){
-        return (int)n*Math.log(n);
+        return (int)(n*Math.log(n)/Math.log(2));
     }    
     
     public double QuickWorstCase(int n){
