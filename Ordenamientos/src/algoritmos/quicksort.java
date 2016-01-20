@@ -7,10 +7,10 @@ int mov=0;
     int index = partition(arr, left, right);
     if (left < index - 1)
       quickSort(arr, left, index - 1);
-    mov++;
+    
     if (index < right)
       quickSort(arr, index, right);
-    mov++;
+    
   }
 
   private int partition(int arr[], int left, int right){
@@ -19,14 +19,18 @@ int mov=0;
     int pivot = arr[(left + right) / 2];
     while (i <= j) {
         mov++;
-      while (arr[i] < pivot)
-        i++;
-         mov++;    
-      while (arr[j] > pivot)
-        j--;
-        mov++;   
+      while (arr[i] < pivot){
+           i++;
+         mov++; 
+      }
+          
+      while (arr[j] > pivot){
+           j--;
+        mov++; 
+      }
+         
       if (i <= j) {
-          mov=mov+4;
+         
         tmp = arr[i];
         inter=inter+2;
         arr[i] = arr[j];            

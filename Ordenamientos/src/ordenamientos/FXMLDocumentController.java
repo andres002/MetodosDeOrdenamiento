@@ -47,7 +47,7 @@ public class FXMLDocumentController implements Initializable {
     private int[] datos; //datos leídos
     private int[] datosO; //Arreglo para los datos que serán ordenados
     int asdes = 0; // 1-- Ascendente  2.-- Descendente  3.-- Desordenado
-    
+    private String nameFile;
     
     @FXML
     private void readFile(ActionEvent event){
@@ -68,6 +68,8 @@ public class FXMLDocumentController implements Initializable {
             txtBurbuja.setText("Numero de Comparaciones: " + BubleCase(datos.length) + 
                 "\nNumero de Intercambios: " + BubleCase2(datos.length));
             txtshell.setText("Numero de Comparaciones: "+ShellBestCase(datos.length));
+            double result = QuickBestCase(datos.length);
+            txtQuick.setText("Número de comparaciones: "+Double.toString(result));
             
         }else{
         txtInsercion.setText("Número de Comparaciones: "+(insercionCompMax(datos.length))+
@@ -75,7 +77,24 @@ public class FXMLDocumentController implements Initializable {
         txtBurbuja.setText("Numero de Comparaciones: " + BubleCase(datos.length) +
                 "\nNumero de Intercambios: " + BubleCase(datos.length));
         txtshell.setText("Numero de Comparaciones: "+ShellWorstCase(datos.length));
+        double resultbadcase= QuickWorstCase(datos.length);
+         txtQuick.setText("El peor Caso: "+Double.toString(resultbadcase));
+        setDatosOrdenados();
        }
+    }
+    
+      @FXML
+    private void QuicSort(ActionEvent event){
+        quicksort quick = new quicksort();
+        int iz = 0;
+        int der = datosO.length-1;
+        quick.quickSort(datosO, iz, der);
+        
+        
+        txtQuick.setText(txtQuick.getText()+"\nComparaciones totales: "+quick.Getmov()+"\nNum de Intercambios: "+quick.Getinter());
+        setDatosOrdenados();
+        //Para recuperar el arreglo desordenado
+        getDatosLeidos();
     }
     @FXML
     private void Merge(ActionEvent event){
@@ -138,31 +157,20 @@ public class FXMLDocumentController implements Initializable {
         }     
     }
     private void setDatosOrdenados(){
+        txtDatosO.setText("");
         for (int i = 0; i < datosO.length; i++) {
             txtDatosO.setText(txtDatosO.getText() + " "+ datosO[i]+"\n");
         }  
     }
-    @FXML
-    private void QuicSort(ActionEvent event){
-        quicksort quick = new quicksort();
-        int iz = 0;
-        int der = datosO.length-1;
-        quick.quickSort(datosO, iz, der);
-        double result = QuickBestCase(datos.length);
-        double resultbadcase= QuickWorstCase(datos.length);
-        txtQuick.setText("El mejor Caso: "+Double.toString(result)+"\n El peor Caso: "+Double.toString(resultbadcase)+"\n"
-                + "\nNum de Movimientos: "+quick.Getmov()+"\nNum de Intercambios: "+quick.Getinter());
-        setDatosOrdenados();
-    }
-    private void getDatosLeidos(){
   
-        String[] data = txtDatosO.getText().split("\n");
-        int aux = 0;
-        for (int i = 0; i < data.length; i++) {
-            if(!" ".equals(data[i]) ){
-                datosO[aux] = Integer.parseInt(data[i].replace(" ",""));    
-                aux++;
-            }
+    private void getDatosLeidos(){
+     
+        if(!txtNombre.getText().equals(" ")){
+            AnalizaFile a = new AnalizaFile(txtNombre.getText());
+            datos = a.getNumbers();
+            datosO = a.getNumbers();
+            verifica(datosO);
+            setDatosLeidos();
         }
    
  
