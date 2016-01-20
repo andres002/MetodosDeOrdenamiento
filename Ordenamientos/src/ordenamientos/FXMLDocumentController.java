@@ -11,13 +11,17 @@ import algoritmos.Shell;
 import algoritmos.Burbuja;
 import algoritmos.quicksort;
 import java.net.URL;
+import java.util.Optional;
 import java.util.Random;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 //import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
@@ -30,7 +34,7 @@ import javafx.scene.layout.AnchorPane;
 public class FXMLDocumentController implements Initializable {
     
     @FXML
-    private TextArea txtMerge, txtInsercion,txtshell, txtBurbuja;
+    private TextArea txtMerge, txtInsercion, txtBurbuja;
     @FXML
     private TextArea txtQuick;
     @FXML
@@ -50,7 +54,24 @@ public class FXMLDocumentController implements Initializable {
     private String nameFile;
     
     @FXML
+    private void Creditos(){
+        Alert a = new Alert(AlertType.INFORMATION);
+        a.setTitle("Creditos");
+        a.setHeaderText("Estructura de Datos Avanzada "
+                + "\n Aeremy Olaya Virrueta");
+        a.setContentText("Integrantes: Andres Aguilar Cruz "
+                + "\nJosseline Juliane Arreola Cruz "
+                + "\nJavier de Jesús Flores Herrera "
+                + "\nHugo Sarmiento Toledo"
+                + "\nJesús Guillermo Méndez Gómez ");
+        a.showAndWait();
+    }
+    
+    
+    @FXML
     private void readFile(ActionEvent event){
+        txtDatosO.setText("");
+        txtDatos.setText("");
         if(!txtNombre.getText().equals(" ")){
             AnalizaFile a = new AnalizaFile(txtNombre.getText());
             datos = a.getNumbers();
@@ -67,7 +88,7 @@ public class FXMLDocumentController implements Initializable {
                     "\nNúmero de Intercambios: 0");
             txtBurbuja.setText("Numero de Comparaciones: " + BubleCase(datos.length) + 
                 "\nNumero de Intercambios: " + BubleCase2(datos.length));
-            txtshell.setText("Numero de Comparaciones: "+ShellBestCase(datos.length));
+           
             double result = QuickBestCase(datos.length);
             txtQuick.setText("Número de comparaciones: "+Double.toString(result));
             
@@ -76,7 +97,7 @@ public class FXMLDocumentController implements Initializable {
                  "\nNúmero de Intercambios: "+insercionMovMax(datos.length));
         txtBurbuja.setText("Numero de Comparaciones: " + BubleCase(datos.length) +
                 "\nNumero de Intercambios: " + BubleCase(datos.length));
-        txtshell.setText("Numero de Comparaciones: "+ShellWorstCase(datos.length));
+       
         double resultbadcase= QuickWorstCase(datos.length);
          txtQuick.setText("El peor Caso: "+Double.toString(resultbadcase));
         setDatosOrdenados();
@@ -113,19 +134,6 @@ public class FXMLDocumentController implements Initializable {
         in.ordenarInsercion(datosO);
         txtInsercion.setText(txtInsercion.getText()+"\nComparaciones Totales: "+in.getComp()+
                 "\nIntercambios Totales: "+in.getMov());
-         setDatosOrdenados();
-        //Para recuperar el arreglo desordenado
-        getDatosLeidos();
-        
-    }
-    
-    
-    @FXML
-    private void Shellsort(ActionEvent event){
-        Shell a = new Shell();
-        a.shellA(datosO);
-        txtshell.setText(txtshell.getText()+"\nIntercambios Totales: "+a.getIntercambios() + 
-                "\nComparaciones Totales: "+ a.getComparaciones());
          setDatosOrdenados();
         //Para recuperar el arreglo desordenado
         getDatosLeidos();

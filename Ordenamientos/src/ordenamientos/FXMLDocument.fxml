@@ -8,19 +8,19 @@
    <children>
       <AnchorPane fx:id="AnchorOrdenar" layoutX="10.0" layoutY="10.0" prefHeight="464.0" prefWidth="535.0" AnchorPane.bottomAnchor="-8.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-8.0" AnchorPane.topAnchor="0.0">
          <children>
-            <AnchorPane layoutX="14.0" layoutY="51.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="160.0" prefWidth="250.0" AnchorPane.leftAnchor="20.0">
+            <AnchorPane layoutX="291.0" layoutY="364.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="160.0" prefWidth="250.0" AnchorPane.leftAnchor="291.0">
                <children>
                   <Button id="btn1" fx:id="btnOrdenarMerge" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#Merge" prefHeight="25.0" prefWidth="220.0" style="-fx-background-radius: 0;" text="Ordenar con merge" textFill="WHITE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
                   <TextArea id="txtF1" fx:id="txtMerge" maxHeight="-Infinity" prefHeight="105.0" prefWidth="220.0" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                </children>
             </AnchorPane>
-            <AnchorPane layoutX="26.0" layoutY="236.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="160.0" prefWidth="250.0" AnchorPane.leftAnchor="20.0">
+            <AnchorPane layoutX="20.0" layoutY="52.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="160.0" prefWidth="250.0" AnchorPane.leftAnchor="20.0">
                <children>
                   <Button id="btn2" fx:id="btnOrdenarInsercion" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#Insercion" prefHeight="25.0" prefWidth="220.0" style="-fx-background-radius: 0;" text="Ordenar con Insercion" textFill="WHITE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
                   <TextArea id="txtF2" fx:id="txtInsercion" maxHeight="-Infinity" prefHeight="105.0" prefWidth="220.0" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                </children>
             </AnchorPane>
-            <AnchorPane layoutX="26.0" layoutY="423.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="160.0" prefWidth="250.0" AnchorPane.leftAnchor="20.0">
+            <AnchorPane layoutX="20.0" layoutY="364.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="160.0" prefWidth="250.0" AnchorPane.leftAnchor="20.0">
                <children>
                   <AnchorPane prefHeight="160.0" prefWidth="250.0">
                      <children>
@@ -34,12 +34,6 @@
                <children>
                   <Button id="btn4" fx:id="btnBurbuja" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#Burbuja" prefHeight="25.0" prefWidth="220.0" style="-fx-background-radius: 0;" text="Ordenar con Burbuja" textFill="WHITE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
                   <TextArea id="txtF4" fx:id="txtBurbuja" maxHeight="-Infinity" prefHeight="105.0" prefWidth="220.0" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
-               </children>
-            </AnchorPane>
-            <AnchorPane layoutX="291.0" layoutY="236.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="160.0" prefWidth="250.0" AnchorPane.rightAnchor="341.0">
-               <children>
-                  <Button id="btn5" fx:id="btnOrdenarShell" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#Shellsort" prefHeight="25.0" prefWidth="220.0" style="-fx-background-radius: 0;" text="Ordenar con Shell" textFill="WHITE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
-                  <TextArea id="txtF5" fx:id="txtshell" maxHeight="-Infinity" prefHeight="105.0" prefWidth="220.0" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                </children>
             </AnchorPane>
             <ScrollPane layoutX="570.0" layoutY="75.0" prefHeight="529.0" prefWidth="131.0" AnchorPane.topAnchor="75.0">
@@ -71,9 +65,9 @@
               <MenuItem mnemonicParsing="false" onAction="#Leer" text="Leer archivo" />
             </items>
           </Menu>
-          <Menu mnemonicParsing="false" text="Creditos">
+          <Menu mnemonicParsing="false" text="Acerca de">
             <items>
-              <MenuItem mnemonicParsing="false" text="Delete" />
+              <MenuItem mnemonicParsing="false" onAction="#Creditos" text="Creditos" />
             </items>
           </Menu>
         </menus>
